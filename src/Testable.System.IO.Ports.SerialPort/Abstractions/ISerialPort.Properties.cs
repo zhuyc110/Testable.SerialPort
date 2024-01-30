@@ -1,11 +1,12 @@
 ﻿using System.IO;
 using System.IO.Ports;
 using System.Text;
+
 using SystemSerialPort = System.IO.Ports.SerialPort;
 
 namespace Testable.System.IO.Ports.SerialPort.Abstractions
 {
-    public interface ISerialPort
+    public partial interface ISerialPort
     {
         /// <inheritdoc cref="SystemSerialPort.BaseStream" />
         Stream BaseStream { get; }

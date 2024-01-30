@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.IO;
+﻿using System.IO;
 using System.IO.Ports;
 using System.Text;
 using Testable.System.IO.Ports.SerialPort.Abstractions;
@@ -8,9 +7,10 @@ using SystemSerialPort = System.IO.Ports.SerialPort;
 
 namespace Testable.System.IO.Ports.SerialPort.Wrappers
 {
-    public class SerialPortWrapper : ISerialPort
+    public partial class SerialPortWrapper : ISerialPort
     {
         private readonly SystemSerialPort _serialPort;
+        private bool disposedValue;
 
         /// <inheritdoc />
         public Stream BaseStream => _serialPort.BaseStream;
@@ -86,15 +86,5 @@ namespace Testable.System.IO.Ports.SerialPort.Wrappers
 
         /// <inheritdoc />
         public int WriteTimeout { get => _serialPort.WriteTimeout; set => _serialPort.WriteTimeout = value; }
-
-        public SerialPortWrapper()
-        {
-            _serialPort = new SystemSerialPort();
-        }
-
-        public SerialPortWrapper(IContainer container)
-        {
-            _serialPort = new SystemSerialPort(container);
-        }
     }
 }
