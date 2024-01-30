@@ -3,13 +3,11 @@ using System.IO.Ports;
 using System.Text;
 using Testable.System.IO.Ports.SerialPort.Abstractions;
 
-using SystemSerialPort = System.IO.Ports.SerialPort;
-
 namespace Testable.System.IO.Ports.SerialPort.Wrappers
 {
     public partial class SerialPortWrapper : ISerialPort
     {
-        private readonly SystemSerialPort _serialPort;
+        private readonly global::System.IO.Ports.SerialPort _serialPort;
         private bool disposedValue;
 
         /// <inheritdoc />

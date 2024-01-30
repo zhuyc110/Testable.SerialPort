@@ -1,19 +1,16 @@
-﻿using System;
-using System.IO.Ports;
-
-using SystemSerialPort = System.IO.Ports.SerialPort;
+﻿using System.IO.Ports;
 
 namespace Testable.System.IO.Ports.SerialPort.Abstractions
 {
-    public partial interface ISerialPort : IDisposable
+    public partial interface ISerialPort 
     {
-        /// <inheritdoc cref="SystemSerialPort.DataReceived" />
+        /// <inheritdoc cref="global::System.IO.Ports.SerialPort.DataReceived" />
         event SerialDataReceivedEventHandler DataReceived;
 
-        /// <inheritdoc cref="SystemSerialPort.ErrorReceived" />
+        /// <inheritdoc cref="global::System.IO.Ports.SerialPort.ErrorReceived" />
         event SerialErrorReceivedEventHandler ErrorReceived;
 
-        /// <inheritdoc cref="SystemSerialPort.PinChanged" />
+        /// <inheritdoc cref="global::System.IO.Ports.SerialPort.PinChanged" />
         event SerialPinChangedEventHandler PinChanged;
     }
 }
