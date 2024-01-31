@@ -7,9 +7,6 @@ namespace Testable.System.IO.Ports.SerialPort.Wrappers
 {
     public partial class SerialPortWrapper : ISerialPort
     {
-        private readonly global::System.IO.Ports.SerialPort _serialPort;
-        private bool disposedValue;
-
         /// <inheritdoc />
         public Stream BaseStream => _serialPort.BaseStream;
 

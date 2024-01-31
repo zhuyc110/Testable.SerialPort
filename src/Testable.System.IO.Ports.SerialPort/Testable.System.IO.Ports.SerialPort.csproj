@@ -1,9 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
-    <Nullable>enable</Nullable>
+    <TargetFrameworks>net8.0;net6.0;netstandard2.1;net480;net462</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>True</IsPackable>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Title>Make serial port testable.</Title>
     <Description>A set of abstractions to help make serial port testable.</Description>
+    <Authors>Mounire</Authors>
+    <RepositoryUrl>https://github.com/zhuyc110/Testable.SerialPort</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageTags>tdd;unittesting;unittest;serialport;</PackageTags>
+    <Version>0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

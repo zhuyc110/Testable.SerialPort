@@ -7,11 +7,14 @@ namespace Testable.System.IO.Ports.SerialPort.Wrappers
 {
     public partial class SerialPortWrapper : ISerialPort
     {
-        /// <inheritdoc />
-        public ISite? Site { get => _serialPort.Site; set => _serialPort.Site = value; }
+        private readonly global::System.IO.Ports.SerialPort _serialPort;
+        private bool _disposedValue;
 
         /// <inheritdoc />
-        public event EventHandler? Disposed;
+        public ISite Site { get => _serialPort.Site; set => _serialPort.Site = value; }
+
+        /// <inheritdoc />
+        public event EventHandler Disposed;
 
         public SerialPortWrapper() : this(new global::System.IO.Ports.SerialPort())
         {
@@ -60,7 +63,7 @@ namespace Testable.System.IO.Ports.SerialPort.Wrappers
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (!_disposedValue)
             {
                 if (disposing)
                 {
@@ -71,7 +74,7 @@ namespace Testable.System.IO.Ports.SerialPort.Wrappers
                     _serialPort.Dispose();
                 }
 
-                disposedValue = true;
+                _disposedValue = true;
             }
         }
 
@@ -90,7 +93,7 @@ namespace Testable.System.IO.Ports.SerialPort.Wrappers
             PinChanged?.Invoke(sender, e);
         }
 
-        private void OnDisposed(object? sender, EventArgs e)
+        private void OnDisposed(object sender, EventArgs e)
         {
             Disposed?.Invoke(sender, e);
         }

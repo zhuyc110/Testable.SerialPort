@@ -5,12 +5,12 @@ namespace Testable.System.IO.Ports.SerialPort.Wrappers
     public partial class SerialPortWrapper
     {
         /// <inheritdoc />
-        public event SerialDataReceivedEventHandler? DataReceived;
+        public event SerialDataReceivedEventHandler DataReceived;
 
         /// <inheritdoc />
-        public event SerialErrorReceivedEventHandler? ErrorReceived;
+        public event SerialErrorReceivedEventHandler ErrorReceived;
 
         /// <inheritdoc />
-        public event SerialPinChangedEventHandler? PinChanged;
+        public event SerialPinChangedEventHandler PinChanged;
     }
 }

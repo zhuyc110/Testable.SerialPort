@@ -6,6 +6,7 @@
         public void Close()
         {
             _serialPort.Close();
+            Dispose();
         }
 
         /// <inheritdoc />
