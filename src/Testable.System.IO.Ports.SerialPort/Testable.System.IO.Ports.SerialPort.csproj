@@ -15,10 +15,18 @@
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageTags>tdd;unittesting;unittest;serialport;</PackageTags>
     <Version>0.1</Version>
+    <PackageIcon>ico.png</PackageIcon>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/zhuyc110/Testable.SerialPort</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ico.png" Pack="true" PackagePath="" />
+    <None Include="readme.md" Pack="True" PackagePath="\" />
   </ItemGroup>
 
 </Project>
